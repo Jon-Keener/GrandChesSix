@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Web ChesSix</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<!-- Changed the board from 8 rows x 8 columns to 11 rows x 12 columns. -->
+<!-- Then made certain squares invisible. -->
+<!-- Then indented the even rows in style.css and -->
+<!-- switched to black/grey/white squares in index.html. -->
+<!-- Renumbered squares from 11 - 1C to 000 - 011, didn't help. -->
+<!-- Switched the position population to hex to better match html code, didn't help. -->
+<!-- Debugged the javescript and found how to set-up the <div> ids in the html code. -->
+<body>
+    <div id="main">
+        <div class="board">
+            <div class="row">
+                <div id="11" class="square black" style="visibility: hidden"></div>
+                <div id="12" class="square grey" style="visibility: hidden"></div>
+                <div id="13" class="square white" style="visibility: hidden"></div>
+                <div id="14" class="square black"></div>
+                <div id="15" class="square grey"></div>
+                <div id="16" class="square white"></div>
+                <div id="17" class="square black"></div>
+                <div id="18" class="square grey"></div>
+                <div id="19" class="square white"></div>
+                <div id="110" class="square black" style="visibility: hidden"></div>
+                <div id="111" class="square grey" style="visibility: hidden"></div>
+                <div id="112" class="square white" style="visibility: hidden"></div>
+            </div>
+            <div class="row">
+                <div id="21" class="square white" style="visibility: hidden"></div>
+                <div id="22" class="square black" style="visibility: hidden"></div>
+                <div id="23" class="square grey"></div>
+                <div id="24" class="square white"></div>
+                <div id="25" class="square black"></div>
+                <div id="26" class="square grey"></div>
+                <div id="27" class="square white"></div>
+                <div id="28" class="square black"></div>
+                <div id="29" class="square grey"></div>
+                <div id="210" class="square white" style="visibility: hidden"></div>
+                <div id="211" class="square black" style="visibility: hidden"></div>
+                <div id="212" class="square grey" style="visibility: hidden"></div>
+            </div>
+            <div class="row">
+                <div id="31" class="square black" style="visibility: hidden"></div>
+                <div id="32" class="square grey" style="visibility: hidden"></div>
+                <div id="33" class="square white"></div>
+                <div id="34" class="square black"></div>
+                <div id="35" class="square grey"></div>
+                <div id="36" class="square white"></div>
+                <div id="37" class="square black"></div>
+                <div id="38" class="square grey"></div>
+                <div id="39" class="square white"></div>
+                <div id="310" class="square black"></div>
+                <div id="311" class="square grey" style="visibility: hidden"></div>
+                <div id="312" class="square white" style="visibility: hidden"></div>
+            </div>
+            <div class="row">
+                <div id="41" class="square white" style="visibility: hidden"></div>
+                <div id="42" class="square black"></div>
+                <div id="43" class="square grey"></div>
+                <div id="44" class="square white"></div>
+                <div id="45" class="square black"></div>
+                <div id="46" class="square grey"></div>
+                <div id="47" class="square white"></div>
+                <div id="48" class="square black"></div>
+                <div id="49" class="square grey"></div>
+                <div id="410" class="square white"></div>
+                <div id="411" class="square black" style="visibility: hidden"></div>
+                <div id="412" class="square grey" style="visibility: hidden"></div>
+            </div>
+            <div class="row">
+                <div id="51" class="square black" style="visibility: hidden"></div>
+                <div id="52" class="square grey"></div>
+                <div id="53" class="square white"></div>
+                <div id="54" class="square black"></div>
+                <div id="55" class="square grey"></div>
+                <div id="56" class="square white"></div>
+                <div id="57" class="square black"></div>
+                <div id="58" class="square grey"></div>
+                <div id="59" class="square white"></div>
+                <div id="510" class="square black"></div>
+                <div id="511" class="square grey"></div>
+                <div id="512" class="square white" style="visibility: hidden"></div>
+            </div>
+            <div class="row">
+                <div id="61" class="square white"></div>
+                <div id="62" class="square black"></div>
+                <div id="63" class="square grey"></div>
+                <div id="64" class="square white"></div>
+                <div id="65" class="square black"></div>
+                <div id="66" class="square grey"></div>
+                <div id="67" class="square white"></div>
+                <div id="68" class="square black"></div>
+                <div id="69" class="square grey"></div>
+                <div id="610" class="square white"></div>
+                <div id="611" class="square black"></div>
+                <div id="612" class="square grey" style="visibility: hidden"></div>
+            </div>
+            <div class="row">
+                <div id="71" class="square black" style="visibility: hidden"></div>
+                <div id="72" class="square grey"></div>
+                <div id="73" class="square white"></div>
+                <div id="74" class="square black"></div>
+                <div id="75" class="square grey"></div>
+                <div id="76" class="square white"></div>
+                <div id="77" class="square black"></div>
+                <div id="78" class="square grey"></div>
+                <div id="79" class="square white"></div>
+                <div id="710" class="square black"></div>
+                <div id="711" class="square grey"></div>
+                <div id="712" class="square white" style="visibility: hidden"></div>
+            </div>
+            <div class="row">
+                <div id="81" class="square white" style="visibility: hidden"></div>
+                <div id="82" class="square black"></div>
+                <div id="83" class="square grey"></div>
+                <div id="84" class="square white"></div>
+                <div id="85" class="square black"></div>
+                <div id="86" class="square grey"></div>
+                <div id="87" class="square white"></div>
+                <div id="88" class="square black"></div>
+                <div id="89" class="square grey"></div>
+                <div id="810" class="square white"></div>
+                <div id="811" class="square black" style="visibility: hidden"></div>
+                <div id="812" class="square grey" style="visibility: hidden"></div>
+            </div>
+            <div class="row">
+                <div id="91" class="square black" style="visibility: hidden"></div>
+                <div id="92" class="square grey" style="visibility: hidden"></div>
+                <div id="93" class="square white"></div>
+                <div id="94" class="square black"></div>
+                <div id="95" class="square grey"></div>
+                <div id="96" class="square white"></div>
+                <div id="97" class="square black"></div>
+                <div id="98" class="square grey"></div>
+                <div id="99" class="square white"></div>
+                <div id="910" class="square black"></div>
+                <div id="911" class="square grey" style="visibility: hidden"></div>
+                <div id="912" class="square white" style="visibility: hidden"></div>
+            </div>
+            <div class="row">
+                <div id="101" class="square white" style="visibility: hidden"></div>
+                <div id="102" class="square black" style="visibility: hidden"></div>
+                <div id="103" class="square grey"></div>
+                <div id="104" class="square white"></div>
+                <div id="105" class="square black"></div>
+                <div id="106" class="square grey"></div>
+                <div id="107" class="square white"></div>
+                <div id="108" class="square black"></div>
+                <div id="109" class="square grey"></div>
+                <div id="1010" class="square white" style="visibility: hidden"></div>
+                <div id="1011" class="square black" style="visibility: hidden"></div>
+                <div id="1012" class="square grey" style="visibility: hidden"></div>
+            </div>
+            <div class="row">
+                <div id="111" class="square black" style="visibility: hidden"></div>
+                <div id="112" class="square grey" style="visibility: hidden"></div>
+                <div id="113" class="square white" style="visibility: hidden"></div>
+                <div id="114" class="square black"></div>
+                <div id="115" class="square grey"></div>
+                <div id="116" class="square white"></div>
+                <div id="117" class="square black"></div>
+                <div id="118" class="square grey"></div>
+                <div id="119" class="square white"></div>
+                <div id="1110" class="square black" style="visibility: hidden"></div>
+                <div id="1111" class="square grey" style="visibility: hidden"></div>
+                <div id="1112" class="square white" style="visibility: hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="gameController.js"></script>
+</body>
+</html>
