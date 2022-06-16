@@ -57,7 +57,9 @@ button {
     justify-content: center;
     align-items: center;
 
+    /* On Point Hexagon */
     clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+
     margin-left: 5px;
     margin-right: 5px;
 }
