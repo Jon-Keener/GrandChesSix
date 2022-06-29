@@ -1,2 +1,2 @@
 # GrandChesSix
-Grand ChesSix
+Grand ChesSix - another chess variant.
